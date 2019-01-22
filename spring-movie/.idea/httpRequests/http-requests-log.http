@@ -1,0 +1,404 @@
+POST http://localhost:8080/api/user/getUser.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012848.200.json
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012726.200.json
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012720.200.json
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012529.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012252.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012226-1.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012226.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012225-2.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012225-1.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012225.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012224.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T012217.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T011952.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T011853.404.html
+
+###
+
+POST http://localhost:8080/api/user/login.do?loginName=108&password=1234
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-10T011751.404.html
+
+###
+
+POST http://localhost:8080/api/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050246.200.json
+
+###
+
+POST http://localhost:8080/api/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050036-1.404.html
+
+###
+
+POST http://localhost:8080/api/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050036.404.html
+
+###
+
+POST http://localhost:8080/api/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050035-1.404.html
+
+###
+
+POST http://localhost:8080/api/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050035.404.html
+
+###
+
+POST http://localhost:8080/api/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050028.404.html
+
+###
+
+POST http://localhost:8080/api/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050027.404.html
+
+###
+
+POST http://localhost:8080/api/order/ShowInfo.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T050018.404.html
+
+###
+
+POST http://localhost:8080/api/order/listShowDay.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T022901.200.json
+
+###
+
+POST http://localhost:8080/api/order/listShowDay.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T021732.200.json
+
+###
+
+POST http://localhost:8080/api/order/listShowDay.do?showTimeId=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T021703.200.json
+
+###
+
+POST http://localhost:8080/api/order/listShowDay.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-08T021652.400.html
+
+###
+
+POST http://localhost:8080/api/listShowTime.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-07T100009.200.json
+
+###
+
+POST http://localhost:8080/api/listShowTime.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071357.200.json
+
+###
+
+POST http://localhost:8080/api/listShowTime.do\?id=1
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8080/api/listShowTime?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071317.404.html
+
+###
+
+POST http://localhost:8080/api/listShowTime?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071307.404.html
+
+###
+
+POST http://localhost:8080/api/listShowTime?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071301.404.html
+
+###
+
+POST http://localhost:8080/api/listShowTime?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071253.404.html
+
+###
+
+POST http://localhost:8080/api/listShowTime?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071249.404.html
+
+###
+
+POST http://localhost:8080/api/listShowTime.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071231.200.json
+
+###
+
+POST http://localhost:8080/api/listShowTime.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071124.404.html
+
+###
+
+POST http://localhost:8080/api/listShowTime.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T071023.404.html
+
+###
+
+POST http://localhost:8080/api/listShowTime.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T070341.404.html
+
+###
+
+POST http://localhost:8080/api/listShowDay.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T015619.200.json
+
+###
+
+POST http://localhost:8080/api/listShowDay.do
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T015335.404.html
+
+###
+
+POST http://localhost:8080/api/listShowDay.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T015220.404.html
+
+###
+
+POST http://localhost:8080/api/getMovieInfo.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T015202.200.json
+
+###
+
+POST http://localhost:8080/api/listShowDay.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T014952.404.html
+
+###
+
+POST http://localhost:8080/api/listShowDay.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T014939.404.html
+
+###
+
+POST http://localhost:8080/api/listShowDay.do?id=1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T014017.404.html
+
+###
+
+POST http://localhost:8080/api/getMovieInfo.do?id=10
+Accept: */*
+Cache-Control: no-cache
+
+<> 2018-09-06T120346.200.json
+
+###
+
+POST http://localhost:8080/api/listMovies.do
+Accept: */*
+Cache-Control: no-cache
+
+id=10
+
+<> 2018-09-06T111741.200.json
+
+###
+
+GET http://localhost:8080/api/getMovieInfo.do？id=10
+Accept: */*
+Cache-Control: no-cache
+
+id=10
+
+<> 2018-09-06T111722.404.html
+
+###
+
+GET http://localhost:8080/api/getMovieInfo.do？id=10
+Accept: */*
+Cache-Control: no-cache
+
+id=10
+
+<> 2018-09-06T111721.404.html
+
+###
+

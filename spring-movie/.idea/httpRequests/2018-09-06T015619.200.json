@@ -1,0 +1,27 @@
+{
+  "errorCode": null,
+  "errorMsg": null,
+  "data": [
+    {
+      "id": 1,
+      "movieId": 1,
+      "showDayCol": "9月6日"
+    },
+    {
+      "id": 2,
+      "movieId": 1,
+      "showDayCol": "9月7日"
+    },
+    {
+      "id": 3,
+      "movieId": 1,
+      "showDayCol": "9月8日"
+    },
+    {
+      "id": 4,
+      "movieId": 1,
+      "showDayCol": "9月9日"
+    }
+  ],
+  "success": true
+}

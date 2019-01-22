@@ -1,0 +1,13 @@
+{
+  "errorCode": null,
+  "errorMsg": null,
+  "data": {
+    "moviename": "碟中谍6：全面瓦解 Mission: Impossible - Fallout",
+    "price": "0.01",
+    "date": "9月07日",
+    "showPlace": "放映厅1",
+    "time": "09：20",
+    "language": "中文"
+  },
+  "success": true
+}

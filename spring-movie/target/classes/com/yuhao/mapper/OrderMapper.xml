@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuhao.mapper.OrderMapper">
+    <resultMap id="BaseResultMap" type="com.yuhao.entity.Order">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="user_id" jdbcType="INTEGER" property="userId"/>
+        <result column="show_time_id" jdbcType="INTEGER" property="showTimeId"/>
+        <result column="total_price" jdbcType="VARCHAR" property="totalPrice"/>
+        <result column="order_no" jdbcType="VARCHAR" property="orderNo"/>
+        <result column="seat_code" jdbcType="VARCHAR" property="seatCode"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="trade_no" jdbcType="VARCHAR" property="tradeNo"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, create_time, user_id, show_time_id, total_price, order_no, seat_code, status, 
+    trade_no
+  </sql>
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from `order`
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from `order`
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+    <insert id="insert" parameterType="com.yuhao.entity.Order">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into `order` (create_time, user_id, show_time_id,
+        total_price, order_no, seat_code,
+        status, trade_no)
+        values (#{createTime,jdbcType=TIMESTAMP}, #{userId,jdbcType=INTEGER}, #{showTimeId,jdbcType=INTEGER},
+        #{totalPrice,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, #{seatCode,jdbcType=VARCHAR},
+        #{status,jdbcType=TINYINT}, #{tradeNo,jdbcType=VARCHAR})
+    </insert>
+
+    <select id="listSaledSeats" parameterType="java.lang.Integer" resultType="string">
+    select b.seat from `order` a,order_info b
+      where a.id=b.order_id
+        and a.`status` in (1,2,4)
+        and a.show_time_id=#{showTimeId}
+  </select>
+
+    <insert id="insertOrder" parameterType="com.yuhao.entity.Order">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into `order` ( user_id, show_time_id,
+        total_price, order_no, seat_code
+        )
+        values ( #{userId,jdbcType=INTEGER}, #{showTimeId,jdbcType=INTEGER},
+        #{totalPrice,jdbcType=VARCHAR}, #{orderNo,jdbcType=VARCHAR}, #{seatCode,jdbcType=VARCHAR}
+        )
+    </insert>
+
+
+    <select id="selectOrderForLock"  resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from `order`
+        where order_no = #{orderNo} for update
+    </select>
+
+
+    <update id="updateOrderStatus">
+        update `order` set status=2,trade_no=#{tradeNo} where order_no=#{orderNo}
+    </update>
+
+    <!--查询下单时间超过10分钟未付款的订单-->
+    <select id="listCancelOrders" resultType="int">
+        select  id from `order`
+        where status=1 and TIMESTAMPDIFF(MINUTE,create_time,NOW())>=10
+    </select>
+
+    <!--根据id加锁-->
+    <select id="selectByPrimaryKeyForLock" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from `order`
+        where id = #{id} for update
+    </select>
+
+    <!--取消订单-->
+    <update id="updateStatusById">
+        update `order` set status=3 where id=#{id}
+    </update>
+
+    <!--查看用户选择的座位有几个已经在数据库中被选了-->
+    <select id="countBySeat" resultType="int">
+        select count(*) from order_info a,`order` b
+          where a.order_id=b.id and seat = #{seat}
+          and b.show_time_id=#{showTimeId} and b.`status` in (1,2,4)
+    </select>
+
+</mapper>

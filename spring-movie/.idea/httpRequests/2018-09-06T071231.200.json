@@ -1,0 +1,92 @@
+{
+  "errorCode": null,
+  "errorMsg": null,
+  "data": [
+    [
+      {
+        "id": 1,
+        "showTimeCol": "10点20",
+        "showDayId": 1,
+        "language": "英文",
+        "showPlace": "放映厅2"
+      },
+      {
+        "id": 2,
+        "showTimeCol": "14点30",
+        "showDayId": 1,
+        "language": "中文",
+        "showPlace": "放映厅1"
+      },
+      {
+        "id": 3,
+        "showTimeCol": "19点50",
+        "showDayId": 1,
+        "language": "英文原声",
+        "showPlace": "放映厅3"
+      },
+      {
+        "id": 0,
+        "showTimeCol": "9点45",
+        "showDayId": 1,
+        "language": "中文",
+        "showPlace": "放映厅1"
+      }
+    ],
+    [
+      {
+        "id": 5,
+        "showTimeCol": "14点30",
+        "showDayId": 2,
+        "language": "英文",
+        "showPlace": "放映厅2"
+      },
+      {
+        "id": 6,
+        "showTimeCol": "19点50",
+        "showDayId": 2,
+        "language": "中文",
+        "showPlace": "放映厅3"
+      },
+      {
+        "id": 4,
+        "showTimeCol": "9点45",
+        "showDayId": 2,
+        "language": "中文",
+        "showPlace": "放映厅1"
+      }
+    ],
+    [
+      {
+        "id": 8,
+        "showTimeCol": "14点30",
+        "showDayId": 3,
+        "language": "中文",
+        "showPlace": "放映厅2"
+      },
+      {
+        "id": 7,
+        "showTimeCol": "9点45",
+        "showDayId": 3,
+        "language": "英文",
+        "showPlace": "放映厅1"
+      }
+    ],
+    [
+      {
+        "id": 10,
+        "showTimeCol": "19点50",
+        "showDayId": 4,
+        "language": "中文",
+        "showPlace": "放映厅3"
+      },
+      {
+        "id": 9,
+        "showTimeCol": "9点45",
+        "showDayId": 4,
+        "language": "英文",
+        "showPlace": "放映厅1"
+      }
+    ]
+  ],
+  "success": true
+}

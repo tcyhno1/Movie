@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+
+    <!--扫描注解，不配置，注解无效-->  <!-- 自动扫描的包名 -->
+    <context:component-scan base-package="com.yuhao.controller"/>
+    <!-- 默认的注解映射的支持 -->
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <!-- @ResponseBody注解支持-开始 -->
+            <bean id="mappingJacksonHttpMessageConverter"
+                  class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="supportedMediaTypes">
+                    <list>
+                        <value>application/json;charset=UTF-8</value>
+                    </list>
+                </property>
+            </bean>
+            <!-- @ResponseBody注解支持-结束 -->
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!--配置视图解析器-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+        <property name="prefix" value="/WEB-INF/jsp/"/>  <!--前缀，这里jsp后面有‘/’，后台return的字符串可有可无，这里没有后台必须有-->
+        <property name="suffix" value=".jsp"/>             <!--后缀-->
+    </bean>
+
+    <!--&lt;!&ndash; 配置拦截器 &ndash;&gt;-->
+    <!--<mvc:interceptors>-->
+        <!--&lt;!&ndash; 配置登陆拦截器 &ndash;&gt;-->
+        <!--<mvc:interceptor>-->
+            <!--&lt;!&ndash;意思是只需要在一个页面处进行拦截即可，直接写到这里比较方便&ndash;&gt;-->
+            <!--<mvc:mapping path="/api/order/addOrder.do"/>-->
+            <!--&lt;!&ndash;<mvc:mapping path="/**"/>&lt;!&ndash;拦截url&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;<mvc:exclude-mapping path="/user/login.do"/>&lt;!&ndash;排除url&ndash;&gt;&ndash;&gt;-->
+            <!--&lt;!&ndash;<mvc:exclude-mapping path="/balance/notifyUrl.do"/>&lt;!&ndash;排除alipay异步通知url&ndash;&gt;&ndash;&gt;-->
+            <!--<bean class="com.yuhao.interceptor.LoginHandlerIntercepter"></bean>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
+
+</beans>

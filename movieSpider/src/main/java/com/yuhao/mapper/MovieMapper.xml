@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yuhao.mapper.MovieMapper">
+
+    <resultMap id="BaseResultMap" type="com.yuhao.entity.Movie">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="movieName" jdbcType="VARCHAR" property="moviename"/>
+        <result column="director" jdbcType="VARCHAR" property="director"/>
+        <result column="writers" jdbcType="VARCHAR" property="writers"/>
+        <result column="starring" jdbcType="VARCHAR" property="starring"/>
+        <result column="type" jdbcType="VARCHAR" property="type"/>
+        <result column="producerCountries" jdbcType="VARCHAR" property="producercountries"/>
+        <result column="language" jdbcType="VARCHAR" property="language"/>
+        <result column="releaseDate" jdbcType="VARCHAR" property="releasedate"/>
+        <result column="filmLength" jdbcType="VARCHAR" property="filmlength"/>
+        <result column="picPath" jdbcType="VARCHAR" property="picpath"/>
+        <result column="desc" jdbcType="VARCHAR" property="desc"/>
+        <result column="price" jdbcType="VARCHAR" property="price"/>
+    </resultMap>
+
+
+    <sql id="Base_Column_List">
+    id, movieName, director, writers, starring, `type`, producerCountries, `language`, releaseDate,
+    filmLength, picPath, `desc`, `price`
+  </sql>
+
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from movie
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from movie
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+    <insert id="insert" parameterType="com.yuhao.entity.Movie" keyProperty="id" useGeneratedKeys="true">
+    insert into movie (movieName, director, writers, 
+      starring, `type`, producerCountries,
+      `language`, releaseDate, filmLength,
+      picPath, `desc`)
+    values (#{moviename,jdbcType=VARCHAR}, #{director,jdbcType=VARCHAR}, #{writers,jdbcType=VARCHAR}, 
+      #{starring,jdbcType=VARCHAR}, #{type,jdbcType=VARCHAR}, #{producercountries,jdbcType=VARCHAR}, 
+      #{language,jdbcType=VARCHAR}, #{releasedate,jdbcType=VARCHAR}, #{filmlength,jdbcType=VARCHAR}, 
+      #{picpath,jdbcType=VARCHAR}, #{desc,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.yuhao.entity.Movie">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into movie
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="moviename != null">
+                movieName,
+            </if>
+            <if test="director != null">
+                director,
+            </if>
+            <if test="writers != null">
+                writers,
+            </if>
+            <if test="starring != null">
+                starring,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="producercountries != null">
+                producerCountries,
+            </if>
+            <if test="language != null">
+                `language`,
+            </if>
+            <if test="releasedate != null">
+                releaseDate,
+            </if>
+            <if test="filmlength != null">
+                filmLength,
+            </if>
+            <if test="picpath != null">
+                picPath,
+            </if>
+            <if test="desc != null">
+                `desc`,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="moviename != null">
+                #{moviename,jdbcType=VARCHAR},
+            </if>
+            <if test="director != null">
+                #{director,jdbcType=VARCHAR},
+            </if>
+            <if test="writers != null">
+                #{writers,jdbcType=VARCHAR},
+            </if>
+            <if test="starring != null">
+                #{starring,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="producercountries != null">
+                #{producercountries,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null">
+                #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="releasedate != null">
+                #{releasedate,jdbcType=VARCHAR},
+            </if>
+            <if test="filmlength != null">
+                #{filmlength,jdbcType=VARCHAR},
+            </if>
+            <if test="picpath != null">
+                #{picpath,jdbcType=VARCHAR},
+            </if>
+            <if test="desc != null">
+                #{desc,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.yuhao.entity.Movie">
+        update movie
+        <set>
+            <if test="moviename != null">
+                movieName = #{moviename,jdbcType=VARCHAR},
+            </if>
+            <if test="director != null">
+                director = #{director,jdbcType=VARCHAR},
+            </if>
+            <if test="writers != null">
+                writers = #{writers,jdbcType=VARCHAR},
+            </if>
+            <if test="starring != null">
+                starring = #{starring,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                `type` = #{type,jdbcType=VARCHAR},
+            </if>
+            <if test="producercountries != null">
+                producerCountries = #{producercountries,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null">
+                `language` = #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="releasedate != null">
+                releaseDate = #{releasedate,jdbcType=VARCHAR},
+            </if>
+            <if test="filmlength != null">
+                filmLength = #{filmlength,jdbcType=VARCHAR},
+            </if>
+            <if test="picpath != null">
+                picPath = #{picpath,jdbcType=VARCHAR},
+            </if>
+            <if test="desc != null">
+                `desc` = #{desc,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.yuhao.entity.Movie">
+    update movie
+    set movieName = #{moviename,jdbcType=VARCHAR},
+      director = #{director,jdbcType=VARCHAR},
+      writers = #{writers,jdbcType=VARCHAR},
+      starring = #{starring,jdbcType=VARCHAR},
+      `type` = #{type,jdbcType=VARCHAR},
+      producerCountries = #{producercountries,jdbcType=VARCHAR},
+      `language` = #{language,jdbcType=VARCHAR},
+      releaseDate = #{releasedate,jdbcType=VARCHAR},
+      filmLength = #{filmlength,jdbcType=VARCHAR},
+      picPath = #{picpath,jdbcType=VARCHAR},
+      `desc` = #{desc,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+
+
+    <select id="listMovie" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from movie
+        order by id
+    </select>
+
+</mapper>

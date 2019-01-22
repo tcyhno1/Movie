@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!--应用名，在控制台可以看到-->
+    <dubbo:application name="dubbo-yu-consumer"/>
+
+    <!--注册中心-->
+    <dubbo:registry address="zookeeper://182.61.59.59:2181" />
+
+    <!--rpc协议-->
+    <dubbo:protocol name="dubbo" port="20881"/>
+
+
+
+
+
+    <!--暴露一个服务-->
+    <dubbo:service interface="com.yuhao.service.MovieService " ref="movieServiceImpl"/>
+    <dubbo:service interface="com.yuhao.service.OrderService " ref="orderServiceImpl"/>
+
+
+</beans>

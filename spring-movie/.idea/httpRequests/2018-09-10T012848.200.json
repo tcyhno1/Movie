@@ -1,0 +1,13 @@
+{
+  "errorCode": null,
+  "errorMsg": null,
+  "data": {
+    "id": 1,
+    "userName": "宝拉",
+    "loginName": "108",
+    "password": "1234",
+    "email": null,
+    "phone": null
+  },
+  "success": true
+}
